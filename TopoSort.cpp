@@ -25,10 +25,11 @@ vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
     vector<int> ans;
     unordered_map<int, bool> seen;
     queue<int> q;
-    for (auto &node : in) {
-        if (in[node] == 0)
-            q.push(node);
-            seen[node] = true;
+    for (int i = 0;i < v;i++) {
+        if (in[i] == 0) {
+            q.push(i);
+            seen[i] = true;
+        }
     }
     while (!q.empty()) {
         int f = q.front();
